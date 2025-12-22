@@ -14,6 +14,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -46,9 +53,10 @@
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/education/SEMESTER-3/PBO-2025/todo-app-java&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/alex_/Documents/tigaspbo/todo-app-java&quot;,
     &quot;onboarding.tips.debug.path&quot;: &quot;D:/education/SEMESTER-3/PBO-2025/todo-app-java/src/Main.java&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;profiler.jvm&quot;,
     &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
