@@ -1,0 +1,16 @@
+id,title,description,deadline,status,priority,category,createdAt
+1,Buat UML Class Diagram,Membuat diagram UML untuk project Todo App menggunakan PlantUML atau draw.io,2025-12-22,IN_PROGRESS,HIGH,Project,2025-12-15 10:00:00
+2,Setup GitHub Repository,Membuat repository dan mengatur struktur folder project,2025-12-18,COMPLETED,HIGH,Development,2025-12-15 11:30:00
+3,Implementasi Class Task,Coding class Task dengan semua atribut dan method,2025-12-21,IN_PROGRESS,HIGH,Development,2025-12-16 09:00:00
+4,Beli Buku PBO,Membeli buku referensi Pemrograman Berorientasi Objek,2025-12-20,TODO,LOW,Personal,2025-12-15 14:00:00
+5,Meeting dengan Dosen,Konsultasi progress project dengan dosen pembimbing,2025-12-19,TODO,MEDIUM,Academic,2025-12-16 08:00:00
+6,Testing FileManager,Melakukan unit testing untuk class FileManager dengan berbagai skenario,2025-12-21,TODO,HIGH,Testing,2025-12-17 10:00:00
+7,Buat Sample Data,Membuat minimal 10 sample data dummy untuk keperluan testing aplikasi,2025-12-20,IN_PROGRESS,MEDIUM,Testing,2025-12-17 13:00:00
+8,Olahraga Pagi,Jogging keliling kampus 30 menit,2025-12-19,TODO,LOW,Health,2025-12-17 06:00:00
+9,Tugas Kalkulus,Mengerjakan soal integral dan diferensial untuk dikumpulkan minggu depan,2025-12-23,TODO,MEDIUM,Academic,2025-12-16 15:00:00
+10,Refactoring Code,Merapikan dan mengoptimalkan code TaskManager,2025-12-24,TODO,MEDIUM,Development,2025-12-18 11:00:00
+11,Presentasi UAS,Persiapan presentasi final project aplikasi Todo,2025-12-30,TODO,HIGH,Academic,2025-12-15 16:00:00
+12,Bayar UKT,Transfer pembayaran UKT semester ini ke bank,2025-12-25,TODO,HIGH,Finance,2025-12-17 09:00:00
+13,Code Review,Review code dari Divisi 1 sebelum integrasi,2025-12-22,TODO,MEDIUM,Development,2025-12-18 14:00:00
+14,Belanja Bulanan,Membeli kebutuhan sehari-hari dan groceries,2025-12-21,TODO,LOW,Personal,2025-12-18 17:00:00
+15,Deploy ke JAR,Build project menjadi executable JAR file untuk deployment,2025-12-28,TODO,HIGH,Deployment,2025-12-18 10:00:00
