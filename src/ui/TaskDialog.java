@@ -30,6 +30,9 @@ public class TaskDialog extends JDialog {
     // Mode
     private final Task editingTask;
     
+    // Theme manager
+    private final ThemeManager themeManager;
+    
     /**
      * Constructor for TaskDialog.
      * 
@@ -40,6 +43,10 @@ public class TaskDialog extends JDialog {
         super(parent, task == null ? "Add New Task" : "Edit Task", true);
         this.editingTask = task;
         this.confirmed = false;
+        this.themeManager = ThemeManager.getInstance();
+        
+        // Set dialog background
+        getContentPane().setBackground(themeManager.getColor("background"));
         
         initComponents();
         layoutComponents();
@@ -53,10 +60,6 @@ public class TaskDialog extends JDialog {
         setResizable(false);
     }
     
-    // Color scheme (matching MainFrame)
-    private static final Color PRIMARY_COLOR = new Color(41, 128, 185);
-    private static final Color SECONDARY_COLOR = new Color(149, 165, 166);
-    
     /**
      * Initializes all UI components.
      */
@@ -64,8 +67,11 @@ public class TaskDialog extends JDialog {
         // Title field
         txtTitle = new JTextField(30);
         txtTitle.setFont(new Font("Segoe UI", Font.PLAIN, 13));
+        txtTitle.setBackground(themeManager.getColor("surface"));
+        txtTitle.setForeground(themeManager.getColor("text"));
+        txtTitle.setCaretColor(themeManager.getColor("text"));
         txtTitle.setBorder(BorderFactory.createCompoundBorder(
-            BorderFactory.createLineBorder(new Color(189, 195, 199), 1),
+            BorderFactory.createLineBorder(themeManager.getColor("border"), 1),
             BorderFactory.createEmptyBorder(5, 8, 5, 8)
         ));
         
@@ -74,21 +80,30 @@ public class TaskDialog extends JDialog {
         txtDescription.setLineWrap(true);
         txtDescription.setWrapStyleWord(true);
         txtDescription.setFont(new Font("Segoe UI", Font.PLAIN, 13));
+        txtDescription.setBackground(themeManager.getColor("surface"));
+        txtDescription.setForeground(themeManager.getColor("text"));
+        txtDescription.setCaretColor(themeManager.getColor("text"));
         txtDescription.setBorder(BorderFactory.createEmptyBorder(5, 8, 5, 8));
         
         // Priority combo box with custom renderer for padding
         String[] priorities = {Task.PRIORITY_LOW, Task.PRIORITY_MEDIUM, Task.PRIORITY_HIGH};
         cmbPriority = new JComboBox<>(priorities);
         cmbPriority.setSelectedItem(Task.PRIORITY_MEDIUM);
-        cmbPriority.setFont(new Font("Segoe UI", Font.PLAIN, 12));
+        cmbPriority.setFont(new Font("Segoe UI", Font.PLAIN, 13));
+        cmbPriority.setBackground(themeManager.getColor("surface"));
+        cmbPriority.setForeground(themeManager.getColor("text"));
         cmbPriority.setRenderer(createComboBoxRenderer());
+        cmbPriority.setBorder(null); // Remove focus border
+        fixComboBoxButton(cmbPriority);
         
         // Category field
-        txtCategory = new JTextField(20);
-        txtCategory.setText("General");
+        txtCategory = new JTextField(30);
         txtCategory.setFont(new Font("Segoe UI", Font.PLAIN, 13));
+        txtCategory.setBackground(themeManager.getColor("surface"));
+        txtCategory.setForeground(themeManager.getColor("text"));
+        txtCategory.setCaretColor(themeManager.getColor("text"));
         txtCategory.setBorder(BorderFactory.createCompoundBorder(
-            BorderFactory.createLineBorder(new Color(189, 195, 199), 1),
+            BorderFactory.createLineBorder(themeManager.getColor("border"), 1),
             BorderFactory.createEmptyBorder(5, 8, 5, 8)
         ));
         
@@ -98,10 +113,13 @@ public class TaskDialog extends JDialog {
         JSpinner.DateEditor dateEditor = new JSpinner.DateEditor(spnDeadlineDate, "dd/MM/yyyy");
         spnDeadlineDate.setEditor(dateEditor);
         spnDeadlineDate.setFont(new Font("Segoe UI", Font.PLAIN, 12));
+        spnDeadlineDate.setBorder(BorderFactory.createLineBorder(themeManager.getColor("border"), 1));
         
-        // Add padding to date spinner editor
+        // Add padding and theme colors to date spinner editor
         JComponent dateEditorComponent = dateEditor.getTextField();
         dateEditorComponent.setBorder(BorderFactory.createEmptyBorder(5, 8, 5, 8));
+        dateEditorComponent.setBackground(themeManager.getColor("surface"));
+        dateEditorComponent.setForeground(themeManager.getColor("text"));
         
         // Deadline time spinner with padding
         SpinnerDateModel timeModel = new SpinnerDateModel();
@@ -109,10 +127,13 @@ public class TaskDialog extends JDialog {
         JSpinner.DateEditor timeEditor = new JSpinner.DateEditor(spnDeadlineTime, "HH:mm");
         spnDeadlineTime.setEditor(timeEditor);
         spnDeadlineTime.setFont(new Font("Segoe UI", Font.PLAIN, 12));
+        spnDeadlineTime.setBorder(BorderFactory.createLineBorder(themeManager.getColor("border"), 1));
         
-        // Add padding to time spinner editor
+        // Add padding and theme colors to time spinner editor
         JComponent timeEditorComponent = timeEditor.getTextField();
         timeEditorComponent.setBorder(BorderFactory.createEmptyBorder(5, 8, 5, 8));
+        timeEditorComponent.setBackground(themeManager.getColor("surface"));
+        timeEditorComponent.setForeground(themeManager.getColor("text"));
     }
     
     /**
@@ -128,9 +149,47 @@ public class TaskDialog extends JDialog {
                     int index, boolean isSelected, boolean cellHasFocus) {
                 super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
                 setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
+                
+                if (!isSelected) {
+                    setBackground(themeManager.getColor("surface"));
+                    setForeground(themeManager.getColor("text"));
+                } else {
+                    setBackground(themeManager.getColor("selection"));
+                    setForeground(themeManager.getColor("text"));
+                }
+                
                 return this;
             }
         };
+    }
+    
+    /**
+     * Fixes combo box button appearance for dark mode using custom UI.
+     * 
+     * @param comboBox JComboBox to fix
+     */
+    private void fixComboBoxButton(JComboBox<?> comboBox) {
+        try {
+            comboBox.setUI(new javax.swing.plaf.basic.BasicComboBoxUI() {
+                @Override
+                protected JButton createArrowButton() {
+                    // Create invisible button to hide the arrow
+                    JButton button = new JButton();
+                    button.setPreferredSize(new Dimension(0, 0));
+                    button.setVisible(false);
+                    return button;
+                }
+                
+                @Override
+                public void paintCurrentValueBackground(Graphics g, Rectangle bounds, boolean hasFocus) {
+                    // Override to prevent blue focus background
+                    g.setColor(themeManager.getColor("surface"));
+                    g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
+                }
+            });
+        } catch (Exception e) {
+            // If custom UI fails, ignore
+        }
     }
     
     /**
@@ -138,18 +197,28 @@ public class TaskDialog extends JDialog {
      */
     private void layoutComponents() {
         JPanel mainPanel = new JPanel(new BorderLayout(10, 10));
+        mainPanel.setBackground(themeManager.getColor("background"));
         mainPanel.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
         
         // Form panel
         JPanel formPanel = new JPanel(new GridBagLayout());
+        formPanel.setBackground(themeManager.getColor("background"));
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(5, 5, 5, 5);
         gbc.anchor = GridBagConstraints.WEST;
         
+        // Helper method to create themed labels
+        java.util.function.Function<String, JLabel> createLabel = text -> {
+            JLabel label = new JLabel(text);
+            label.setForeground(themeManager.getColor("text"));
+            label.setFont(new Font("Segoe UI", Font.PLAIN, 13));
+            return label;
+        };
+        
         // Title
         gbc.gridx = 0;
         gbc.gridy = 0;
-        formPanel.add(new JLabel("Title: *"), gbc);
+        formPanel.add(createLabel.apply("Title: *"), gbc);
         
         gbc.gridx = 1;
         gbc.fill = GridBagConstraints.HORIZONTAL;
@@ -162,13 +231,15 @@ public class TaskDialog extends JDialog {
         gbc.fill = GridBagConstraints.NONE;
         gbc.weightx = 0;
         gbc.anchor = GridBagConstraints.NORTHWEST;
-        formPanel.add(new JLabel("Description:"), gbc);
+        formPanel.add(createLabel.apply("Description:"), gbc);
         
         gbc.gridx = 1;
         gbc.fill = GridBagConstraints.BOTH;
         gbc.weightx = 1.0;
         gbc.weighty = 1.0;
         JScrollPane scrollDesc = new JScrollPane(txtDescription);
+        scrollDesc.setBorder(BorderFactory.createLineBorder(themeManager.getColor("border"), 1));
+        scrollDesc.getViewport().setBackground(themeManager.getColor("surface"));
         formPanel.add(scrollDesc, gbc);
         
         // Priority
@@ -178,7 +249,7 @@ public class TaskDialog extends JDialog {
         gbc.weightx = 0;
         gbc.weighty = 0;
         gbc.anchor = GridBagConstraints.WEST;
-        formPanel.add(new JLabel("Priority:"), gbc);
+        formPanel.add(createLabel.apply("Priority:"), gbc);
         
         gbc.gridx = 1;
         gbc.fill = GridBagConstraints.HORIZONTAL;
@@ -188,7 +259,7 @@ public class TaskDialog extends JDialog {
         gbc.gridx = 0;
         gbc.gridy = 3;
         gbc.fill = GridBagConstraints.NONE;
-        formPanel.add(new JLabel("Category:"), gbc);
+        formPanel.add(createLabel.apply("Category:"), gbc);
         
         gbc.gridx = 1;
         gbc.fill = GridBagConstraints.HORIZONTAL;
@@ -198,7 +269,7 @@ public class TaskDialog extends JDialog {
         gbc.gridx = 0;
         gbc.gridy = 4;
         gbc.fill = GridBagConstraints.NONE;
-        formPanel.add(new JLabel("Deadline Date: *"), gbc);
+        formPanel.add(createLabel.apply("Deadline Date: *"), gbc);
         
         gbc.gridx = 1;
         gbc.fill = GridBagConstraints.HORIZONTAL;
@@ -208,7 +279,7 @@ public class TaskDialog extends JDialog {
         gbc.gridx = 0;
         gbc.gridy = 5;
         gbc.fill = GridBagConstraints.NONE;
-        formPanel.add(new JLabel("Deadline Time: *"), gbc);
+        formPanel.add(createLabel.apply("Deadline Time: *"), gbc);
         
         gbc.gridx = 1;
         gbc.fill = GridBagConstraints.HORIZONTAL;
@@ -218,14 +289,15 @@ public class TaskDialog extends JDialog {
         
         // Button panel
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT, 10, 10));
+        buttonPanel.setBackground(themeManager.getColor("background"));
         
         JButton btnSave = createStyledButton(
             editingTask == null ? "Add Task" : "Save Changes", 
-            PRIMARY_COLOR
+            themeManager.getColor("primary")
         );
         btnSave.addActionListener(e -> onSave());
         
-        JButton btnCancel = createStyledButton("Cancel", SECONDARY_COLOR);
+        JButton btnCancel = createStyledButton("Cancel", themeManager.getColor("secondary"));
         btnCancel.addActionListener(e -> onCancel());
         
         buttonPanel.add(btnSave);
@@ -235,7 +307,8 @@ public class TaskDialog extends JDialog {
         
         // Required fields note
         JLabel lblRequired = new JLabel("* Required fields");
-        lblRequired.setFont(new Font(lblRequired.getFont().getName(), Font.ITALIC, 10));
+        lblRequired.setFont(new Font("Segoe UI", Font.ITALIC, 10));
+        lblRequired.setForeground(themeManager.getColor("textSecondary"));
         mainPanel.add(lblRequired, BorderLayout.NORTH);
         
         setContentPane(mainPanel);
