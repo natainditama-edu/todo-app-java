@@ -1,6 +1,14 @@
-package com.todoapp.manager;
+package manager;
 
-import public class DataValidator {
+import model.Task;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.util.Arrays;
+import java.util.List;
+
+public class DataValidator {
 
     // Valid values untuk status, priority, dan category
     private static final List<String> VALID_STATUSES = Arrays.asList("TODO", "IN_PROGRESS", "COMPLETED");
@@ -25,8 +33,8 @@ import public class DataValidator {
                 isValidCategory(task.getCategory());
     }
 
-    public static boolean isValidId(int id) {
-        return id > 0;
+    public static boolean isValidId(String id) {
+        return id != null && !id.trim().isEmpty();
     }
 
     public static boolean isValidTitle(String title) {
@@ -144,11 +152,6 @@ import public class DataValidator {
 
         if (!isValidDescription(task.getDescription())) {
             errors.append("- Description must be max 500 characters\n");
-        }
-
-        if (task.getDeadline() != null && !task.getDeadline().isEmpty() &&
-                !isValidDeadline(task.getDeadline())) {
-            errors.append("- Deadline format must be yyyy-MM-dd\n");
         }
 
         if (!isValidStatus(task.getStatus())) {
