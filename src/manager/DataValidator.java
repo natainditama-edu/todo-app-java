@@ -10,9 +10,18 @@ import java.util.List;
 
 public class DataValidator {
 
-    // Valid values untuk status, priority, dan category
-    private static final List<String> VALID_STATUSES = Arrays.asList("TODO", "IN_PROGRESS", "COMPLETED");
-    private static final List<String> VALID_PRIORITIES = Arrays.asList("LOW", "MEDIUM", "HIGH");
+    // Valid values untuk status, priority, dan category - using Task constants
+    private static final List<String> VALID_STATUSES = Arrays.asList(
+            Task.STATUS_PENDING, 
+            Task.STATUS_IN_PROGRESS, 
+            Task.STATUS_COMPLETED, 
+            Task.STATUS_CANCELLED
+    );
+    private static final List<String> VALID_PRIORITIES = Arrays.asList(
+            Task.PRIORITY_LOW, 
+            Task.PRIORITY_MEDIUM, 
+            Task.PRIORITY_HIGH
+    );
     private static final List<String> VALID_CATEGORIES = Arrays.asList(
             "Personal", "Academic", "Development", "Testing", "Project",
             "Health", "Finance", "Deployment", "Work", "Other"
@@ -79,7 +88,7 @@ public class DataValidator {
             return false;
         }
 
-        return VALID_STATUSES.contains(status.toUpperCase());
+        return VALID_STATUSES.contains(status);
     }
 
     public static boolean isValidPriority(String priority) {
@@ -87,7 +96,7 @@ public class DataValidator {
             return false;
         }
 
-        return VALID_PRIORITIES.contains(priority.toUpperCase());
+        return VALID_PRIORITIES.contains(priority);
     }
 
     public static boolean isValidCategory(String category) {

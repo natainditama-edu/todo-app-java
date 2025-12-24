@@ -1,16 +1,101 @@
 id,title,description,deadline,status,priority,category,createdAt
-1,Buat UML Class Diagram,Membuat diagram UML untuk project Todo App menggunakan PlantUML atau draw.io,2025-12-22,IN_PROGRESS,HIGH,Project,2025-12-15 10:00:00
-2,Setup GitHub Repository,Membuat repository dan mengatur struktur folder project,2025-12-18,COMPLETED,HIGH,Development,2025-12-15 11:30:00
-3,Implementasi Class Task,Coding class Task dengan semua atribut dan method,2025-12-21,IN_PROGRESS,HIGH,Development,2025-12-16 09:00:00
-4,Beli Buku PBO,Membeli buku referensi Pemrograman Berorientasi Objek,2025-12-20,TODO,LOW,Personal,2025-12-15 14:00:00
-5,Meeting dengan Dosen,Konsultasi progress project dengan dosen pembimbing,2025-12-19,TODO,MEDIUM,Academic,2025-12-16 08:00:00
-6,Testing FileManager,Melakukan unit testing untuk class FileManager dengan berbagai skenario,2025-12-21,TODO,HIGH,Testing,2025-12-17 10:00:00
-7,Buat Sample Data,Membuat minimal 10 sample data dummy untuk keperluan testing aplikasi,2025-12-20,IN_PROGRESS,MEDIUM,Testing,2025-12-17 13:00:00
-8,Olahraga Pagi,Jogging keliling kampus 30 menit,2025-12-19,TODO,LOW,Health,2025-12-17 06:00:00
-9,Tugas Kalkulus,Mengerjakan soal integral dan diferensial untuk dikumpulkan minggu depan,2025-12-23,TODO,MEDIUM,Academic,2025-12-16 15:00:00
-10,Refactoring Code,Merapikan dan mengoptimalkan code TaskManager,2025-12-24,TODO,MEDIUM,Development,2025-12-18 11:00:00
-11,Presentasi UAS,Persiapan presentasi final project aplikasi Todo,2025-12-30,TODO,HIGH,Academic,2025-12-15 16:00:00
-12,Bayar UKT,Transfer pembayaran UKT semester ini ke bank,2025-12-25,TODO,HIGH,Finance,2025-12-17 09:00:00
-13,Code Review,Review code dari Divisi 1 sebelum integrasi,2025-12-22,TODO,MEDIUM,Development,2025-12-18 14:00:00
-14,Belanja Bulanan,Membeli kebutuhan sehari-hari dan groceries,2025-12-21,TODO,LOW,Personal,2025-12-18 17:00:00
-15,Deploy ke JAR,Build project menjadi executable JAR file untuk deployment,2025-12-28,TODO,HIGH,Deployment,2025-12-18 10:00:00
+1,Buat UML Class Diagram,"Membuat diagram UML untuk project Todo App menggunakan PlantUML atau draw.io",2025-12-22 23:59:59,In Progress,High,Project,2025-12-15 10:00:00
+2,Setup GitHub Repository,"Membuat repository dan mengatur struktur folder project",2025-12-18 23:59:59,Completed,High,Development,2025-12-15 11:30:00
+3,Implementasi Class Task,"Coding class Task dengan semua atribut dan method",2025-12-21 23:59:59,In Progress,High,Development,2025-12-16 09:00:00
+4,Beli Buku PBO,"Membeli buku referensi Pemrograman Berorientasi Objek",2025-12-20 23:59:59,Pending,Low,Personal,2025-12-15 14:00:00
+5,Meeting dengan Dosen,"Konsultasi progress project dengan dosen pembimbing",2025-12-19 23:59:59,Completed,Medium,Academic,2025-12-16 08:00:00
+6,Testing FileManager,"Melakukan unit testing untuk class FileManager dengan berbagai skenario",2025-12-21 23:59:59,Pending,High,Testing,2025-12-17 10:00:00
+7,Buat Sample Data,"Membuat minimal 10 sample data dummy untuk keperluan testing aplikasi",2025-12-20 23:59:59,In Progress,Medium,Testing,2025-12-17 13:00:00
+8,Olahraga Pagi,"Jogging keliling kampus 30 menit",2025-12-19 23:59:59,Pending,Low,Health,2025-12-17 06:00:00
+9,Tugas Kalkulus,"Mengerjakan soal integral dan diferensial untuk dikumpulkan minggu depan",2025-12-23 23:59:59,Pending,Medium,Academic,2025-12-16 15:00:00
+10,Refactoring Code,"Merapikan dan mengoptimalkan code TaskManager",2025-12-24 23:59:59,Pending,Medium,Development,2025-12-18 11:00:00
+11,Presentasi UAS,"Persiapan presentasi final project aplikasi Todo",2025-12-30 23:59:59,Pending,High,Academic,2025-12-15 16:00:00
+12,Bayar UKT,"Transfer pembayaran UKT semester ini ke bank",2025-12-25 23:59:59,Completed,High,Finance,2025-12-17 09:00:00
+13,Code Review,"Review code dari tim sebelum integrasi",2025-12-22 23:59:59,Pending,Medium,Development,2025-12-18 14:00:00
+14,Belanja Bulanan,"Membeli kebutuhan sehari-hari dan groceries",2025-12-21 23:59:59,Pending,Low,Personal,2025-12-18 17:00:00
+15,Deploy ke JAR,"Build project menjadi executable JAR file untuk deployment",2025-12-28 23:59:59,Pending,High,Deployment,2025-12-18 10:00:00
+16,Implementasi GUI,"Membuat antarmuka pengguna dengan Java Swing",2025-12-26 23:59:59,In Progress,High,Development,2025-12-19 09:00:00
+17,Dokumentasi API,"Menulis dokumentasi lengkap untuk semua class dan method",2025-12-27 23:59:59,Pending,Medium,Project,2025-12-19 11:00:00
+18,Setup Database,"Konfigurasi koneksi database MySQL untuk aplikasi",2025-12-23 23:59:59,Pending,High,Development,2025-12-19 14:00:00
+19,Belajar Design Pattern,"Mempelajari Singleton, Factory, dan Observer pattern",2025-12-29 23:59:59,In Progress,Medium,Academic,2025-12-20 08:00:00
+20,Gym Session,"Latihan beban dan cardio di gym kampus",2025-12-22 23:59:59,Pending,Low,Health,2025-12-20 06:00:00
+21,Buat Laporan Mingguan,"Menulis progress report untuk dosen pembimbing",2025-12-24 23:59:59,Pending,Medium,Academic,2025-12-20 15:00:00
+22,Fix Bug Login,"Memperbaiki bug pada fitur authentication",2025-12-21 23:59:59,In Progress,High,Development,2025-12-20 10:00:00
+23,Update Dependencies,"Update semua library ke versi terbaru",2025-12-25 23:59:59,Pending,Low,Development,2025-12-21 09:00:00
+24,Backup Data,"Membuat backup database dan source code",2025-12-23 23:59:59,Completed,High,Work,2025-12-21 11:00:00
+25,Rapat Tim,"Meeting koordinasi dengan seluruh anggota tim",2025-12-22 23:59:59,Completed,Medium,Work,2025-12-21 14:00:00
+26,Belajar SQL,"Mempelajari query optimization dan indexing",2025-12-28 23:59:59,Pending,Medium,Academic,2025-12-22 08:00:00
+27,Implementasi Search,"Menambahkan fitur pencarian task dengan filter",2025-12-26 23:59:59,In Progress,High,Development,2025-12-22 10:00:00
+28,Yoga Class,"Mengikuti kelas yoga untuk relaksasi",2025-12-23 23:59:59,Pending,Low,Health,2025-12-22 07:00:00
+29,Bayar Listrik,"Transfer pembayaran tagihan listrik bulan ini",2025-12-24 23:59:59,Pending,Medium,Finance,2025-12-22 16:00:00
+30,Setup CI/CD,"Konfigurasi GitHub Actions untuk automated testing",2025-12-29 23:59:59,Pending,High,Deployment,2025-12-23 09:00:00
+31,Buat User Manual,"Menulis panduan penggunaan aplikasi untuk end user",2025-12-30 23:59:59,Pending,Medium,Project,2025-12-23 11:00:00
+32,Performance Testing,"Melakukan load testing untuk mengukur performa aplikasi",2025-12-27 23:59:59,Pending,High,Testing,2025-12-23 13:00:00
+33,Belajar Git Advanced,"Mempelajari rebase, cherry-pick, dan conflict resolution",2025-12-28 23:59:59,In Progress,Medium,Academic,2025-12-24 08:00:00
+34,Implementasi Export,"Menambahkan fitur export data ke CSV dan PDF",2025-12-31 23:59:59,Pending,Medium,Development,2025-12-24 10:00:00
+35,Medical Checkup,"Pemeriksaan kesehatan rutin di klinik kampus",2025-12-26 23:59:59,Pending,Medium,Health,2025-12-24 07:00:00
+36,Buat Presentation Slides,"Membuat slide PowerPoint untuk presentasi akhir",2025-12-29 23:59:59,Pending,High,Academic,2025-12-24 15:00:00
+37,Security Audit,"Melakukan audit keamanan aplikasi",2025-12-30 23:59:59,Pending,High,Testing,2025-12-25 09:00:00
+38,Implementasi Dark Mode,"Menambahkan tema gelap pada aplikasi",2025-12-28 23:59:59,In Progress,Medium,Development,2025-12-25 11:00:00
+39,Beli Domain,"Membeli nama domain untuk project deployment",2025-12-27 23:59:59,Pending,Low,Finance,2025-12-25 14:00:00
+40,Setup Email Service,"Konfigurasi SMTP untuk notifikasi email",2025-12-31 23:59:59,Pending,Medium,Development,2025-12-26 09:00:00
+41,Buat Test Cases,"Menulis test cases untuk semua fitur aplikasi",2025-12-29 23:59:59,In Progress,High,Testing,2025-12-26 10:00:00
+42,Swimming,"Berenang 20 lap di kolam kampus",2025-12-27 23:59:59,Pending,Low,Health,2025-12-26 06:00:00
+43,Tugas Statistika,"Mengerjakan analisis regresi untuk mata kuliah statistika",2025-12-30 23:59:59,Pending,Medium,Academic,2025-12-26 16:00:00
+44,Implementasi Notification,"Menambahkan sistem notifikasi real-time",2025-01-02 23:59:59,Pending,High,Development,2025-12-27 09:00:00
+45,Code Cleanup,"Menghapus dead code dan unused imports",2025-12-28 23:59:59,Pending,Low,Development,2025-12-27 11:00:00
+46,Bayar Internet,"Transfer pembayaran tagihan internet",2025-12-29 23:59:59,Completed,Medium,Finance,2025-12-27 15:00:00
+47,Setup Monitoring,"Konfigurasi monitoring tools untuk production",2025-01-03 23:59:59,Pending,High,Deployment,2025-12-28 09:00:00
+48,Buat Video Demo,"Merekam video demonstrasi aplikasi untuk presentasi",2025-12-31 23:59:59,Pending,Medium,Project,2025-12-28 11:00:00
+49,Integration Testing,"Testing integrasi antar modul aplikasi",2025-12-30 23:59:59,In Progress,High,Testing,2025-12-28 13:00:00
+50,Meditation Session,"Meditasi 30 menit untuk mental health",2025-12-29 23:59:59,Pending,Low,Health,2025-12-28 07:00:00
+51,Belajar Spring Boot,"Mempelajari framework Spring Boot untuk backend",2025-01-05 23:59:59,Pending,Medium,Academic,2025-12-29 08:00:00
+52,Implementasi Logging,"Menambahkan comprehensive logging system",2025-01-02 23:59:59,Pending,Medium,Development,2025-12-29 10:00:00
+53,Grocery Shopping,"Belanja sayur dan buah untuk seminggu",2025-12-30 23:59:59,Pending,Low,Personal,2025-12-29 17:00:00
+54,Setup Load Balancer,"Konfigurasi load balancer untuk scalability",2025-01-04 23:59:59,Pending,High,Deployment,2025-12-30 09:00:00
+55,Buat API Documentation,"Menulis dokumentasi REST API dengan Swagger",2025-01-03 23:59:59,Pending,Medium,Project,2025-12-30 11:00:00
+56,Accessibility Testing,"Testing aksesibilitas aplikasi untuk users dengan disabilitas",2025-01-02 23:59:59,Pending,Medium,Testing,2025-12-30 13:00:00
+57,Running 5K,"Lari 5 kilometer di track kampus",2025-12-31 23:59:59,Pending,Low,Health,2025-12-30 06:00:00
+58,Tugas Algoritma,"Implementasi algoritmi sorting dan searching",2025-01-04 23:59:59,In Progress,High,Academic,2025-12-30 15:00:00
+59,Implementasi Cache,"Menambahkan Redis caching untuk performa",2025-01-05 23:59:59,Pending,High,Development,2025-12-31 09:00:00
+60,Setup Backup Strategy,"Membuat automated backup schedule",2025-01-03 23:59:59,Pending,High,Work,2025-12-31 11:00:00
+61,Bayar Asuransi,"Transfer pembayaran premi asuransi kesehatan",2025-01-02 23:59:59,Pending,Medium,Finance,2025-12-31 14:00:00
+62,Browser Testing,"Testing aplikasi di berbagai browser",2025-01-04 23:59:59,Pending,Medium,Testing,2025-01-01 09:00:00
+63,Implementasi Pagination,"Menambahkan pagination untuk list view",2025-01-05 23:59:59,In Progress,Medium,Development,2025-01-01 10:00:00
+64,Dental Checkup,"Pemeriksaan gigi rutin di dokter gigi",2025-01-03 23:59:59,Pending,Medium,Health,2025-01-01 08:00:00
+65,Buat Changelog,"Menulis changelog untuk semua versi aplikasi",2025-01-04 23:59:59,Pending,Low,Project,2025-01-01 15:00:00
+66,Setup SSL Certificate,"Install SSL certificate untuk HTTPS",2025-01-06 23:59:59,Pending,High,Deployment,2025-01-02 09:00:00
+67,Usability Testing,"Melakukan usability testing dengan real users",2025-01-05 23:59:59,Pending,High,Testing,2025-01-02 11:00:00
+68,Belajar Docker,"Mempelajari containerization dengan Docker",2025-01-07 23:59:59,In Progress,Medium,Academic,2025-01-02 13:00:00
+69,Implementasi Validation,"Menambahkan input validation di semua form",2025-01-06 23:59:59,Pending,High,Development,2025-01-02 15:00:00
+70,Cycling,"Bersepeda keliling kota 10 kilometer",2025-01-04 23:59:59,Pending,Low,Health,2025-01-02 07:00:00
+71,Tugas Basis Data,"Membuat ERD dan normalisasi database",2025-01-06 23:59:59,Pending,High,Academic,2025-01-03 08:00:00
+72,Setup Analytics,"Konfigurasi Google Analytics untuk tracking",2025-01-07 23:59:59,Pending,Medium,Deployment,2025-01-03 10:00:00
+73,Buat Release Notes,"Menulis release notes untuk versi 1.0",2025-01-05 23:59:59,Pending,Medium,Project,2025-01-03 12:00:00
+74,Mobile Responsive Testing,"Testing responsive design di berbagai device",2025-01-06 23:59:59,In Progress,High,Testing,2025-01-03 14:00:00
+75,Bayar Kartu Kredit,"Pembayaran tagihan kartu kredit bulan ini",2025-01-05 23:59:59,Pending,High,Finance,2025-01-03 16:00:00
+76,Implementasi i18n,"Menambahkan internationalization support",2025-01-08 23:59:59,Pending,Medium,Development,2025-01-04 09:00:00
+77,Setup CDN,"Konfigurasi CDN untuk static assets",2025-01-07 23:59:59,Pending,Medium,Deployment,2025-01-04 11:00:00
+78,Stress Testing,"Melakukan stress testing untuk find breaking point",2025-01-08 23:59:59,Pending,High,Testing,2025-01-04 13:00:00
+79,Hiking,"Mendaki gunung untuk refreshing",2025-01-06 23:59:59,Pending,Low,Health,2025-01-04 06:00:00
+80,Belajar Microservices,"Mempelajari arsitektur microservices",2025-01-09 23:59:59,Pending,Medium,Academic,2025-01-04 15:00:00
+81,Implementasi Rate Limiting,"Menambahkan rate limiting untuk API",2025-01-08 23:59:59,Pending,High,Development,2025-01-05 09:00:00
+82,Buat Marketing Material,"Membuat brosur dan poster untuk promosi",2025-01-07 23:59:59,Pending,Low,Project,2025-01-05 11:00:00
+83,Setup Error Tracking,"Konfigurasi Sentry untuk error monitoring",2025-01-09 23:59:59,Pending,High,Deployment,2025-01-05 13:00:00
+84,Regression Testing,"Melakukan regression testing setelah update",2025-01-08 23:59:59,In Progress,High,Testing,2025-01-05 15:00:00
+85,Vitamin Shopping,"Membeli suplemen dan vitamin",2025-01-07 23:59:59,Pending,Low,Health,2025-01-05 17:00:00
+86,Tugas Jaringan Komputer,"Konfigurasi routing dan subnetting",2025-01-09 23:59:59,Pending,Medium,Academic,2025-01-06 08:00:00
+87,Implementasi WebSocket,"Menambahkan real-time communication dengan WebSocket",2025-01-10 23:59:59,Pending,High,Development,2025-01-06 10:00:00
+88,Setup Staging Environment,"Membuat staging server untuk testing",2025-01-09 23:59:59,Pending,High,Deployment,2025-01-06 12:00:00
+89,Bayar Gym Membership,"Perpanjang membership gym untuk 3 bulan",2025-01-08 23:59:59,Pending,Medium,Finance,2025-01-06 14:00:00
+90,Security Testing,"Penetration testing untuk find vulnerabilities",2025-01-10 23:59:59,Pending,High,Testing,2025-01-06 16:00:00
+91,Belajar Kubernetes,"Mempelajari orchestration dengan Kubernetes",2025-01-11 23:59:59,In Progress,Medium,Academic,2025-01-07 08:00:00
+92,Implementasi Audit Log,"Menambahkan audit logging untuk compliance",2025-01-10 23:59:59,Pending,High,Development,2025-01-07 10:00:00
+93,Buat FAQ Document,"Menulis frequently asked questions",2025-01-09 23:59:59,Pending,Low,Project,2025-01-07 12:00:00
+94,Setup Auto Scaling,"Konfigurasi auto scaling untuk handle traffic",2025-01-11 23:59:59,Pending,High,Deployment,2025-01-07 14:00:00
+95,Compatibility Testing,"Testing compatibility dengan legacy systems",2025-01-10 23:59:59,Pending,Medium,Testing,2025-01-07 16:00:00
+96,Basketball Game,"Main basket dengan teman-teman",2025-01-09 23:59:59,Pending,Low,Health,2025-01-07 07:00:00
+97,Final Project Review,"Review final sebelum submission",2025-01-12 23:59:59,Pending,High,Academic,2025-01-08 08:00:00
+98,Implementasi Backup Restore,"Menambahkan fitur restore dari backup",2025-01-11 23:59:59,Pending,High,Development,2025-01-08 10:00:00
+99,Setup Disaster Recovery,"Membuat disaster recovery plan",2025-01-12 23:59:59,Pending,High,Work,2025-01-08 12:00:00
+100,Project Submission,"Submit final project ke dosen",2025-01-15 23:59:59,Pending,High,Academic,2025-01-08 14:00:00

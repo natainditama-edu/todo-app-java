@@ -5,16 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="282ffa95-c017-442b-a0d0-576cbd7c650d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/manager/FileManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/manager/TaskManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/tasks.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/tasks.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/manager/DataValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/manager/DataValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Task.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/TaskManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/FileManagerTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/MainFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/ThemeManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/ThemeManager.java" afterDir="false" />
     </list>
