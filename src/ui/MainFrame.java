@@ -658,7 +658,7 @@ public class MainFrame extends JFrame {
         // Apply search filter
         String searchKeyword = txtSearch.getText().trim();
         if (!searchKeyword.isEmpty()) {
-            tasks = taskManager.searchTask(searchKeyword);
+            tasks = taskManager.searchTasks(searchKeyword);
             hasFilters = true;
             filterDescription = "search: \"" + searchKeyword + "\"";
         }

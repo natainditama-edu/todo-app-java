@@ -122,9 +122,10 @@ public class ThemeManager {
      */
     private String getWindowsRegistryValue(String key, String valueName) {
         try {
-            Process process = Runtime.getRuntime().exec(
-                "reg query \"" + key + "\" /v " + valueName
+            ProcessBuilder processBuilder = new ProcessBuilder(
+                "reg", "query", key, "/v", valueName
             );
+            Process process = processBuilder.start();
             
             java.io.BufferedReader reader = new java.io.BufferedReader(
                 new java.io.InputStreamReader(process.getInputStream())
