@@ -98,4 +98,4 @@ id,title,description,deadline,status,priority,category,createdAt
 97,Final Project Review,"Review final sebelum submission",2025-01-12 23:59:59,Pending,High,Academic,2025-01-08 08:00:00
 98,Implementasi Backup Restore,"Menambahkan fitur restore dari backup",2025-01-11 23:59:59,Pending,High,Development,2025-01-08 10:00:00
 99,Setup Disaster Recovery,"Membuat disaster recovery plan",2025-01-12 23:59:59,Pending,High,Work,2025-01-08 12:00:00
-100,Project Submission,"Submit final project ke dosen",2025-01-15 23:59:59,Pending,High,Academic,2025-01-08 14:00:00
+100,Project Submission,"Submit final project ke dosen",2025-01-15 23:59:00,Pending,High,Academic,2025-01-08 14:00:00
