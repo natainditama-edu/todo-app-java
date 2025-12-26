@@ -1,0 +1,248 @@
+@startuml Todo_Application_Class_Diagram
+
+' Styling
+skinparam classAttributeIconSize 0
+skinparam class {
+    BackgroundColor White
+    BorderColor Black
+    ArrowColor Black
+}
+
+' Main Entry Point
+class Main {
+    - {static} DATA_FILE: String
+    + {static} main(String[]): void
+}
+
+' ============ MODEL LAYER ============
+package "model" {
+    class Task {
+        ' Constants
+        + {static} STATUS_PENDING: String
+        + {static} STATUS_IN_PROGRESS: String
+        + {static} STATUS_COMPLETED: String
+        + {static} STATUS_CANCELLED: String
+        + {static} PRIORITY_LOW: String
+        + {static} PRIORITY_MEDIUM: String
+        + {static} PRIORITY_HIGH: String
+        
+        ' Attributes
+        - id: String
+        - title: String
+        - description: String
+        - deadline: LocalDateTime
+        - status: String
+        - priority: String
+        - category: String
+        - createdAt: LocalDateTime
+        
+        ' Constructors
+        + Task(String, String, LocalDateTime, String, String)
+        + Task(String, String, String, LocalDateTime, String, String, String, LocalDateTime)
+        
+        ' Getters
+        + getId(): String
+        + getTitle(): String
+        + getDescription(): String
+        + getDeadline(): LocalDateTime
+        + getStatus(): String
+        + getPriority(): String
+        + getCategory(): String
+        + getCreatedAt(): LocalDateTime
+        
+        ' Setters
+        + setTitle(String): void
+        + setDescription(String): void
+        + setDeadline(LocalDateTime): void
+        + setStatus(String): void
+        + setPriority(String): void
+        + setCategory(String): void
+        
+        ' Business Logic
+        + isOverdue(): boolean
+        + toCsvString(): String
+    }
+}
+
+' ============ MANAGER LAYER ============
+package "manager" {
+    class TaskManager {
+        - tasks: List<Task>
+        - fileManager: FileManager
+        
+        + TaskManager(String)
+        + addTask(Task): void
+        + updateTask(String, Task): boolean
+        + deleteTask(String): boolean
+        + getTask(String): Task
+        + getAllTasks(): List<Task>
+        + filterByStatus(String): List<Task>
+        + filterByPriority(String): List<Task>
+        + filterByCategory(String): List<Task>
+        + searchTasks(String): List<Task>
+        + getStatistics(): String
+        - loadTasks(): void
+        - saveTasks(): void
+    }
+    
+    class FileManager {
+        - {static} FORMATTER: DateTimeFormatter
+        - dataFile: String
+        
+        + FileManager(String)
+        + saveToFile(List<Task>): void
+        + loadFromFile(): List<Task>
+        - parseTaskFromCsv(String): Task
+        - parseCsvLine(String): List<String>
+    }
+    
+    class DataValidator {
+        - {static} VALID_STATUSES: List<String>
+        - {static} VALID_PRIORITIES: List<String>
+        - {static} VALID_CATEGORIES: List<String>
+        - {static} DATE_FORMATTER: DateTimeFormatter
+        - {static} DATETIME_FORMATTER: DateTimeFormatter
+        
+        + {static} isValidTask(Task): boolean
+        + {static} isValidId(String): boolean
+        + {static} isValidTitle(String): boolean
+        + {static} isValidDescription(String): boolean
+        + {static} isValidDeadline(String): boolean
+        + {static} isValidStatus(String): boolean
+        + {static} isValidPriority(String): boolean
+        + {static} isValidCategory(String): boolean
+        + {static} sanitizeForCsv(String): String
+        + {static} getValidationErrors(Task): String
+        + {static} getValidStatuses(): List<String>
+        + {static} getValidPriorities(): List<String>
+        + {static} getValidCategories(): List<String>
+    }
+}
+
+' ============ UI LAYER ============
+package "ui" {
+    class MainFrame {
+        - taskManager: TaskManager
+        - themeManager: ThemeManager
+        - table: JTable
+        - tableModel: DefaultTableModel
+        - txtSearch: JTextField
+        - cmbFilterStatus: JComboBox<String>
+        - cmbFilterPriority: JComboBox<String>
+        - cmbFilterCategory: JComboBox<String>
+        - lblStatistics: JLabel
+        
+        + MainFrame(TaskManager)
+        - initComponents(): void
+        - layoutComponents(): void
+        - setupEventHandlers(): void
+        - refreshTable(): void
+        - applyFilters(): void
+        - showTaskDetails(): void
+        - addTask(): void
+        - editTask(): void
+        - deleteTask(): void
+        - updateStatistics(): void
+        - fixComboBoxButton(JComboBox<?>): void
+        - createStyledButton(String, Color): JButton
+    }
+    
+    class TaskDialog {
+        - task: Task
+        - isEditMode: boolean
+        - themeManager: ThemeManager
+        - txtTitle: JTextField
+        - txtDescription: JTextArea
+        - spnDeadlineDate: JSpinner
+        - spnDeadlineTime: JSpinner
+        - cmbPriority: JComboBox<String>
+        - cmbCategory: JComboBox<String>
+        
+        + TaskDialog(JFrame, Task)
+        + showDialog(): Task
+        - initComponents(): void
+        - layoutComponents(): void
+        - saveTask(): void
+        - validateInputs(): boolean
+        - fixComboBoxButton(JComboBox<?>): void
+    }
+    
+    class ThemeManager {
+        - {static} instance: ThemeManager
+        - isDarkMode: boolean
+        - lightColors: Map<String, Color>
+        - darkColors: Map<String, Color>
+        
+        - ThemeManager()
+        + {static} getInstance(): ThemeManager
+        - initializeColorPalettes(): void
+        - detectOSTheme(): void
+        - getWindowsRegistryValue(String, String): String
+        + isDarkMode(): boolean
+        + getColor(String): Color
+        + setDarkMode(boolean): void
+    }
+}
+
+' ============ RELATIONSHIPS ============
+
+' Main relationships
+Main ..> TaskManager : creates
+Main ..> FileManager : uses
+Main ..> MainFrame : creates
+
+' TaskManager relationships
+TaskManager "1" *-- "0..*" Task : manages
+TaskManager "1" --> "1" FileManager : uses
+TaskManager ..> DataValidator : validates with
+
+' FileManager relationships
+FileManager ..> Task : creates
+
+' UI relationships
+MainFrame "1" --> "1" TaskManager : uses
+MainFrame "1" --> "1" ThemeManager : uses
+MainFrame ..> TaskDialog : creates
+TaskDialog ..> Task : creates/edits
+TaskDialog "1" --> "1" ThemeManager : uses
+
+' Singleton pattern
+ThemeManager ..> ThemeManager : <<singleton>>
+
+' Notes
+note right of Task
+  Domain Model
+  - Encapsulates task data
+  - Business logic (isOverdue)
+  - CSV conversion
+end note
+
+note right of TaskManager
+  Controller/Service Layer
+  - CRUD operations
+  - Filtering & searching
+  - Statistics calculation
+end note
+
+note right of FileManager
+  Data Persistence Layer
+  - CSV file I/O
+  - Data parsing
+  - Error handling
+end note
+
+note right of MainFrame
+  View Layer (MVC)
+  - Main application window
+  - Table display
+  - Event handling
+end note
+
+note right of ThemeManager
+  Singleton Pattern
+  - Single instance
+  - Theme detection
+  - Color management
+end note
+
+@enduml
