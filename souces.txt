@@ -1,0 +1,8 @@
+C:\Users\ajepa\Desktop\PBO\Java-API\todo-app-java\src\Main.java
+C:\Users\ajepa\Desktop\PBO\Java-API\todo-app-java\src\manager\DataValidator.java
+C:\Users\ajepa\Desktop\PBO\Java-API\todo-app-java\src\manager\FileManager.java
+C:\Users\ajepa\Desktop\PBO\Java-API\todo-app-java\src\manager\TaskManager.java
+C:\Users\ajepa\Desktop\PBO\Java-API\todo-app-java\src\model\Task.java
+C:\Users\ajepa\Desktop\PBO\Java-API\todo-app-java\src\ui\MainFrame.java
+C:\Users\ajepa\Desktop\PBO\Java-API\todo-app-java\src\ui\TaskDialog.java
+C:\Users\ajepa\Desktop\PBO\Java-API\todo-app-java\src\ui\ThemeManager.java
